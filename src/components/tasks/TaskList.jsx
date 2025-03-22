@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { FaSortAmountDown, FaSortAmountUp, FaCheckCircle, FaClock } from 'react-icons/fa';
+import { FaSortAmountDown, FaSortAmountUp } from 'react-icons/fa';
 import TaskItem from './TaskItem';
 
 const TaskList = ({ tasks, onComplete, onEdit, onDelete }) => {

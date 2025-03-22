@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getToken } from '../utils/tokenUtils';
 
-const API_URL = 'https://localhost:7188/api';
+const API_URL = 'http://localhost:5042/api';
 
 // Create axios instance with auth header
 const apiClient = axios.create({
