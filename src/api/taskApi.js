@@ -3,6 +3,21 @@ import { getToken } from '../utils/tokenUtils';
 
 const API_URL = 'http://localhost:5042/api';
 
+const authAxios = axios.create({
+  baseURL: API_URL
+});
+
+authAxios.interceptors.request.use(
+  config => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  error => Promise.reject(error)
+);
+
 // Create axios instance with auth header
 const apiClient = axios.create({
   baseURL: API_URL
