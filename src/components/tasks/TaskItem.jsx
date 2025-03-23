@@ -7,6 +7,19 @@ const TaskItem = ({ task, onComplete, onEdit, onDelete }) => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [isCompleting, setIsCompleting] = useState(false);
 
+  // Calculate timeToComplete if not provided
+  const calculateTimeToComplete = () => {
+    if (task.startDate && task.endDate) {
+      const start = new Date(task.startDate);
+      const end = new Date(task.endDate);
+      const diffInMs = end - start;
+      return diffInMs > 0 ? diffInMs : 0; // Ensure no negative values
+    }
+    return null;
+  };
+
+  const timeToComplete = task.timeToComplete || calculateTimeToComplete();
+
   const handleComplete = async () => {
     if (task.isCompleted) return;
     setIsCompleting(true);
@@ -59,10 +72,10 @@ const TaskItem = ({ task, onComplete, onEdit, onDelete }) => {
                 </div>
               )}
               
-              {task.timeToComplete && (
+              {timeToComplete && (
                 <div className="flex items-center">
                   <span className="font-medium text-primary-700">
-                    Time to complete: {formatDuration(task.timeToComplete)}
+                    Time to complete: {formatDuration(timeToComplete)}
                   </span>
                 </div>
               )}
