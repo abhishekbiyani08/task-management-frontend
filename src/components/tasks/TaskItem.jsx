@@ -62,7 +62,7 @@ const TaskItem = ({ task, onComplete, onEdit, onDelete }) => {
             <div className="mt-3 flex flex-wrap gap-y-2 text-sm text-gray-500">
               <div className="flex items-center mr-4">
                 <FaClock className="mr-1" />
-                <span>Created: {formatDate(task.startDate)}</span>
+                <span>Added: {formatDate(task.startDate)}</span>
               </div>
               
               {task.isCompleted && task.endDate && (
@@ -75,7 +75,7 @@ const TaskItem = ({ task, onComplete, onEdit, onDelete }) => {
               {timeToComplete && (
                 <div className="flex items-center">
                   <span className="font-medium text-primary-700">
-                    Time to complete: {formatDuration(timeToComplete)}
+                    Completed in: {formatDuration(timeToComplete)}
                   </span>
                 </div>
               )}
