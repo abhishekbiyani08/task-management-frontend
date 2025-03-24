@@ -82,7 +82,7 @@ const Register = () => {
       className="max-w-md mx-auto"
     >
       <div className="card">
-        <div className="card-header bg-primary-600 text-white">
+        <div className="card-header bg-purple-900 text-white">
           <h2 className="text-xl font-semibold">Register</h2>
         </div>
         <div className="card-body">
@@ -143,7 +143,7 @@ const Register = () => {
               whileTap={{ scale: 0.97 }}
               type="submit"
               disabled={loading}
-              className="btn-primary w-full"
+              className="btn-primary bg-purple-900 hover:bg-purple-700 w-full"
             >
               {loading ? 'Registering...' : 'Register'}
             </motion.button>

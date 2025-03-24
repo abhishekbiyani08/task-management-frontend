@@ -43,7 +43,7 @@ const HomePage = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="inline-block mb-4"
         >
-          <FaCheckCircle className="text-6xl text-primary-600" />
+          <FaCheckCircle className="text-6xl text-purple-900" />
         </motion.div>
         <h1 className="text-4xl font-bold text-gray-800 mb-4">Welcome to TaskMaster</h1>
         <p className="text-xl text-gray-600 mb-8">
@@ -54,7 +54,7 @@ const HomePage = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="btn-primary text-lg px-6 py-3"
+              className="btn-primary bg-purple-900 hover:bg-purple-700 text-lg px-6 py-3"
             >
               Go to My Tasks
             </motion.button>
@@ -65,7 +65,7 @@ const HomePage = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-primary text-lg px-6 py-3 w-full sm:w-auto"
+                className="btn-primary bg-purple-900 hover:bg-purple-700 text-lg px-6 py-3 w-full sm:w-auto"
               >
                 Login
               </motion.button>
@@ -91,8 +91,8 @@ const HomePage = () => {
           variants={itemVariants}
           className="bg-white p-6 rounded-lg shadow-md"
         >
-          <div className="bg-primary-100 rounded-full p-3 w-12 h-12 flex items-center justify-center mb-4">
-            <FaTasks className="text-xl text-primary-600" />
+          <div className="bg-purple-100 rounded-full p-3 w-12 h-12 flex items-center justify-center mb-4">
+            <FaTasks className="text-xl text-purple-900" />
           </div>
           <h3 className="text-xl font-semibold mb-3">Manage Tasks</h3>
           <p className="text-gray-600">
@@ -104,8 +104,8 @@ const HomePage = () => {
           variants={itemVariants}
           className="bg-white p-6 rounded-lg shadow-md"
         >
-          <div className="bg-primary-100 rounded-full p-3 w-12 h-12 flex items-center justify-center mb-4">
-            <FaCheckCircle className="text-xl text-primary-600" />
+          <div className="bg-purple-100 rounded-full p-3 w-12 h-12 flex items-center justify-center mb-4">
+            <FaCheckCircle className="text-xl text-purple-900" />
           </div>
           <h3 className="text-xl font-semibold mb-3">Track Progress</h3>
           <p className="text-gray-600">
@@ -117,8 +117,8 @@ const HomePage = () => {
           variants={itemVariants}
           className="bg-white p-6 rounded-lg shadow-md"
         >
-          <div className="bg-primary-100 rounded-full p-3 w-12 h-12 flex items-center justify-center mb-4">
-            <FaUserAlt className="text-xl text-primary-600" />
+          <div className="bg-purple-100 rounded-full p-3 w-12 h-12 flex items-center justify-center mb-4">
+            <FaUserAlt className="text-xl text-purple-900" />
           </div>
           <h3 className="text-xl font-semibold mb-3">Personal Account</h3>
           <p className="text-gray-600">

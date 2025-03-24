@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaCheckCircle, FaEdit, FaTrash, FaClock } from 'react-icons/fa';
-import { formatDate, formatDuration } from '../../utils/dateUtils';
+import { formatDate, calculateDuration } from '../../utils/dateUtils';
 
 const TaskItem = ({ task, onComplete, onEdit, onDelete }) => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [isCompleting, setIsCompleting] = useState(false);
+
 
   // Calculate timeToComplete if not provided
   const calculateTimeToComplete = () => {
@@ -74,8 +75,9 @@ const TaskItem = ({ task, onComplete, onEdit, onDelete }) => {
               
               {timeToComplete && (
                 <div className="flex items-center">
-                  <span className="font-medium text-primary-700">
-                    Completed in: {formatDuration(timeToComplete)}
+                  <span className="font-medium text-purple-900">
+                    {/* Completed in: {formatDuration(timeToComplete)} */}
+                    Completed in : {calculateDuration(task.startDate, task.endDate)}
                   </span>
                 </div>
               )}
@@ -89,7 +91,7 @@ const TaskItem = ({ task, onComplete, onEdit, onDelete }) => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => onEdit(task)}
-                  className="p-2 text-blue-600 hover:text-blue-800 transition-colors"
+                  className="p-2 text-purple-900 hover:text-purple-700 transition-colors"
                   title="Edit task"
                 >
                   <FaEdit size={18} />

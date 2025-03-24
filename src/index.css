@@ -8,7 +8,7 @@
   }
 
   .btn-primary {
-    @apply btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+    @apply btn bg-purple-900 text-white hover:bg-purple-700 focus:ring-purple-500;
   }
 
   .btn-secondary {
@@ -20,7 +20,7 @@
   }
 
   .input {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-900 focus:border-transparent;
   }
 
   .form-group {

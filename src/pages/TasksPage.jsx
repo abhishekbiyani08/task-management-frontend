@@ -48,13 +48,27 @@ const TasksPage = () => {
     }
   };
 
+  // const handleCreateTask = async (taskData) => {
+  //   try {
+  //     const newTask = await createTask(taskData);
+  //     setTasks(prev => [newTask, ...prev]);
+  //     return newTask;
+  //   } catch (error) {
+  //     console.error('Error creating task:', error);
+  //     throw error;
+  //   }
+  // };
+
   const handleCreateTask = async (taskData) => {
     try {
       const newTask = await createTask(taskData);
-      setTasks(prev => [newTask, ...prev]);
+      const updatedTasks = await getTasks();
+      setTasks(updatedTasks);
+      // toast.success('Task created successfully!');
       return newTask;
     } catch (error) {
       console.error('Error creating task:', error);
+      // toast.error('Failed to create task');
       throw error;
     }
   };
@@ -73,16 +87,30 @@ const TasksPage = () => {
     }
   };
 
+  // const handleCompleteTask = async (taskId) => {
+  //   try {
+  //     const completedTask = await completeTask(taskId);
+  //     setTasks(prev => prev.map(task => 
+  //       task.id === completedTask.id ? completedTask : task
+  //     ));
+  //     return completedTask;
+  //   } catch (error) {
+  //     console.error('Error completing task:', error);
+  //     toast.error('Failed to complete task');
+  //     throw error;
+  //   }
+  // };
+
   const handleCompleteTask = async (taskId) => {
     try {
-      const completedTask = await completeTask(taskId);
-      setTasks(prev => prev.map(task => 
-        task.id === completedTask.id ? completedTask : task
-      ));
-      return completedTask;
+      await completeTask(taskId);
+      const updatedTasks = await getTasks();
+      setTasks(updatedTasks);
+  
+      // toast.success('Task marked as completed!');
     } catch (error) {
       console.error('Error completing task:', error);
-      toast.error('Failed to complete task');
+      // toast.error('Failed to complete task');
       throw error;
     }
   };
@@ -128,7 +156,7 @@ const TasksPage = () => {
             </div>
             <div className="bg-white px-4 py-3 rounded-lg shadow-sm border border-gray-100">
               <p className="text-sm text-gray-500">Active</p>
-              <p className="text-2xl font-bold text-primary-600">{stats.active}</p>
+              <p className="text-2xl font-bold text-purple-900">{stats.active}</p>
             </div>
             <div className="bg-white px-4 py-3 rounded-lg shadow-sm border border-gray-100">
               <p className="text-sm text-gray-500">Completed</p>

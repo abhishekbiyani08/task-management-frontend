@@ -1,12 +1,19 @@
 export const formatDate = (utcDateString) => {
   if (!utcDateString) return '';
-  
-  const date = new Date(utcDateString);
-  
-  return date.toLocaleString('en-IN', { 
-    timeZone: 'Asia/Kolkata',
-    dateStyle: 'medium', 
-    timeStyle: 'short' 
+
+  const utcDate = new Date(utcDateString);
+
+  const istOffset = 5.5 * 60 * 60 * 1000; // IST is UTC+5:30
+  const istDate = new Date(utcDate.getTime() + istOffset);
+
+  return istDate.toLocaleString('en-IN', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true,
   });
 };
 
@@ -31,4 +38,20 @@ export const formatDuration = (startDate, endDate) => {
   } else {
     return `${seconds}s`;
   }
+};
+
+export const calculateDuration = (startDate, endDate) => {
+  if (!startDate || !endDate) return null;
+
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+
+  const diffInMs = end - start;
+  if (diffInMs <= 0) return null;
+
+  const seconds = Math.floor((diffInMs / 1000) % 60);
+  const minutes = Math.floor((diffInMs / (1000 * 60)) % 60);
+  const hours = Math.floor(diffInMs / (1000 * 60 * 60));
+
+  return `${hours}h ${minutes}m ${seconds}s`;
 };

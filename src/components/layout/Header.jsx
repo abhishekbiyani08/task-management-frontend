@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-primary-600 text-white shadow-md">
+    <header className="bg-purple-900 text-white shadow-md">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
@@ -46,7 +46,7 @@ const Header = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={handleLogout}
-                    className="flex items-center px-3 py-1 bg-primary-700 rounded hover:bg-primary-800 transition-colors"
+                    className="flex items-center px-3 py-1 bg-purple-500 rounded hover:bg-purple-400 transition-colors"
                   >
                     <FaSignOutAlt className="mr-1" />
                     Logout
@@ -55,12 +55,12 @@ const Header = () => {
               </>
             ) : (
               <>
-                <Link to="/login" className="hover:text-primary-200 transition-colors">
+                <Link to="/login" className="hover:text-purple-100 transition-colors">
                   Login
                 </Link>
                 <Link 
                   to="/register" 
-                  className="px-3 py-1 bg-white text-primary-600 rounded hover:bg-primary-100 transition-colors"
+                  className="px-3 py-1 bg-white text-purple-600 rounded hover:bg-purple-100 transition-colors"
                 >
                   Register
                 </Link>
@@ -92,7 +92,7 @@ const Header = () => {
                   <>
                     <Link 
                       to="/tasks" 
-                      className="py-2 hover:text-primary-200 transition-colors"
+                      className="py-2 hover:text-purple-600 transition-colors"
                       onClick={closeMenu}
                     >
                       My Tasks
@@ -105,7 +105,7 @@ const Header = () => {
                         handleLogout();
                         closeMenu();
                       }}
-                      className="flex items-center py-2 text-left hover:text-primary-200 transition-colors"
+                      className="flex items-center py-2 text-left hover:text-purple-200 transition-colors"
                     >
                       <FaSignOutAlt className="mr-2" />
                       Logout

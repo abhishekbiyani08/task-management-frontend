@@ -40,7 +40,7 @@ const TaskList = ({ tasks, onComplete, onEdit, onDelete }) => {
             onClick={() => setFilter('all')}
             className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
               filter === 'all' 
-                ? 'bg-primary-600 text-white' 
+                ? 'bg-purple-900 text-white' 
                 : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
             }`}
           >
@@ -50,7 +50,7 @@ const TaskList = ({ tasks, onComplete, onEdit, onDelete }) => {
             onClick={() => setFilter('active')}
             className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
               filter === 'active' 
-                ? 'bg-primary-600 text-white' 
+                ? 'bg-purple-900 text-white' 
                 : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
             }`}
           >
@@ -60,7 +60,7 @@ const TaskList = ({ tasks, onComplete, onEdit, onDelete }) => {
             onClick={() => setFilter('completed')}
             className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
               filter === 'completed' 
-                ? 'bg-primary-600 text-white' 
+                ? 'bg-purple-900 text-white' 
                 : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
             }`}
           >

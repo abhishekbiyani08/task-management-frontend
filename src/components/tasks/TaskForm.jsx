@@ -68,7 +68,7 @@ const TaskForm = ({ onSubmit, initialData = null, onCancel = null }) => {
       transition={{ duration: 0.3 }}
       className="card mb-6"
     >
-      <div className="card-header bg-primary-600 text-white">
+      <div className="card-header bg-purple-900 text-white">
         <h2 className="text-lg font-medium">
           {initialData ? 'Edit Task' : 'Create New Task'}
         </h2>
@@ -124,7 +124,7 @@ const TaskForm = ({ onSubmit, initialData = null, onCancel = null }) => {
               whileTap={{ scale: 0.97 }}
               type="submit"
               disabled={isSubmitting}
-              className="btn-primary"
+              className="btn-primary bg-purple-900 hover:bg-purple-700"
             >
               {isSubmitting ? 'Saving...' : initialData ? 'Update Task' : 'Create Task'}
             </motion.button>

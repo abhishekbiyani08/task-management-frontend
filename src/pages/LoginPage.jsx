@@ -31,7 +31,7 @@ const LoginPage = () => {
         <div className="mt-6 text-center">
           <p className="text-gray-600">
             Don't have an account?{' '}
-            <Link to="/register" className="text-primary-600 hover:text-primary-800 font-medium">
+            <Link to="/register" className="text-purple-900 hover:text-purple-700 font-medium">
               Register
             </Link>
           </p>
