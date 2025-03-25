@@ -76,7 +76,6 @@ const TaskItem = ({ task, onComplete, onEdit, onDelete }) => {
               {timeToComplete && (
                 <div className="flex items-center">
                   <span className="font-medium text-purple-900">
-                    {/* Completed in: {formatDuration(timeToComplete)} */}
                     Completed in : {calculateDuration(task.startDate, task.endDate)}
                   </span>
                 </div>

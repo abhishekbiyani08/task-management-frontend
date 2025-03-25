@@ -35,7 +35,10 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-6">
             {currentUser ? (
               <>
-                <Link to="/tasks" className="hover:text-primary-200 transition-colors">
+                <Link to="/history" className="hover:text-purple-100 transition-colors">
+                  Task History
+                </Link>
+                <Link to="/tasks" className="hover:text-purple-100 transition-colors">
                   My Tasks
                 </Link>
                 <div className="flex items-center">

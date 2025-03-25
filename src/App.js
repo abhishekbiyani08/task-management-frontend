@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import TasksPage from './pages/TasksPage';
+import TaskHistoryPage from './pages/TaskHistoryPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             
             <Route element={<PrivateRoute />}>
               <Route path="tasks" element={<TasksPage />} />
+              <Route path="history" element={<TaskHistoryPage />} />
             </Route>
             
             <Route path="*" element={<Navigate to="/" replace />} />
@@ -30,7 +32,7 @@ function App() {
         
         <ToastContainer 
           position="bottom-right"
-          autoClose={5000}
+          autoClose={3000}
           hideProgressBar={false}
           newestOnTop
           closeOnClick

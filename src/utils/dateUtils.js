@@ -2,10 +2,15 @@ export const formatDate = (utcDateString) => {
   if (!utcDateString) return '';
 
   const utcDate = new Date(utcDateString);
+  // console.log('UTC Date:', utcDate);
 
-  const istOffset = 5.5 * 60 * 60 * 1000; // IST is UTC+5:30
+  // Convert UTC to IST
+  // const istOffset = 5.5 * 60 * 60 * 1000; IST is UTC+5:30
+  const istOffset = 0;
   const istDate = new Date(utcDate.getTime() + istOffset);
+  // console.log('IST Date:', istDate);
 
+  // Format the IST date
   return istDate.toLocaleString('en-IN', {
     day: '2-digit',
     month: '2-digit',
@@ -18,8 +23,9 @@ export const formatDate = (utcDateString) => {
 };
 
 export const formatDuration = (startDate, endDate) => {
-  const start = startDate instanceof Date ? startDate : new Date(startDate);
-  const end = endDate instanceof Date ? endDate : new Date(endDate);
+  // Convert startDate and endDate to IST
+  const start = new Date(new Date(startDate).getTime() + 5.5 * 60 * 60 * 1000);
+  const end = new Date(new Date(endDate).getTime() + 5.5 * 60 * 60 * 1000);
 
   const milliseconds = end - start;
   if (isNaN(milliseconds) || milliseconds < 0) return 'Invalid duration';
@@ -43,8 +49,9 @@ export const formatDuration = (startDate, endDate) => {
 export const calculateDuration = (startDate, endDate) => {
   if (!startDate || !endDate) return null;
 
-  const start = new Date(startDate);
-  const end = new Date(endDate);
+  // Convert startDate and endDate to IST
+  const start = new Date(new Date(startDate).getTime() + 5.5 * 60 * 60 * 1000);
+  const end = new Date(new Date(endDate).getTime() + 5.5 * 60 * 60 * 1000);
 
   const diffInMs = end - start;
   if (diffInMs <= 0) return null;
