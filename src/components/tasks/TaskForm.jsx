@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const TaskForm = ({ onSubmit, initialData = null, onCancel = null }) => {
   const [taskData, setTaskData] = useState({
     title: initialData?.title || '',
-    description: initialData?.description || ''
+    description: initialData?.description || '',
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,7 +49,7 @@ const TaskForm = ({ onSubmit, initialData = null, onCancel = null }) => {
         // Reset form after successful creation
         setTaskData({
           title: '',
-          description: ''
+          description: '',
         });
       }
       toast.success(initialData ? 'Task updated successfully' : 'Task created successfully');
@@ -126,7 +126,7 @@ const TaskForm = ({ onSubmit, initialData = null, onCancel = null }) => {
               disabled={isSubmitting}
               className="btn-primary bg-purple-900 hover:bg-purple-700"
             >
-              {isSubmitting ? 'Saving...' : initialData ? 'Update Task' : 'Create Task'}
+              {isSubmitting ? 'Saving...' : initialData ? 'Update Task' : '+ Add Task'}
             </motion.button>
           </div>
         </form>
